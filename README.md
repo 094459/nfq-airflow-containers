@@ -84,10 +84,6 @@ To run, **first edit the setup.sh file** in the java-containers directory (you w
 
 The script will produce similar output, but in addition creates an ECR Repository in which to upload the container image.
 
-
-```
-
-
 **Database credentials**
 
 We need to make sure that our container workloads can access the resources they need. Kubernetes does allow you to manage secrets, but as we have created the code in Java, we will store our secret an a secrets store. I will be using AWS Secrets Manager in the code, which means we now have to define that secret. 
@@ -635,10 +631,4 @@ I try and create code and posts that work, but things always creep up. Here is a
 ```
 3/ added sg from mwaa/eks to the rds sg (inbound) for connectivity
 4/ temp added inbound from my up to load up db
-5/ The Java code expects the following paramters - java DatabaseToS3Exporter <db-server> <db-name> <sql-query> <s3-bucket-name> <aws-region> <secret-arn>
-
-"airflow-nfq-rds-mysqlinstance2cfb48f1-x9j3yhq6fny7.ckjnkmqlugio.ap-southeast-1.rds.amazonaws.com nfqrdsdemo" ,"'select count(*) from pizzas'" , "nfq-airflow-dags" , "ap-southeast-1", "arn:aws:secretsmanager:ap-southeast-1:704533066374:secret:MySqlInstanceSecretE6DCC68A-VnDObuh9J4JO-649U5j"
-
-ELECT * from pizza_orders WHERE pizza = "Hawaiian";
-ELECT * from pizza_orders WHERE pizza = "Veggie";
-ELECT * from pizza_orders WHERE pizza = "Cheese";
+5/ The Java code expects the following paramters - java DatabaseToS3Exporter <db-server> <db-name> <sql-query> <s3-bucket-name> <aws-region> <secret-arn> <filename>
