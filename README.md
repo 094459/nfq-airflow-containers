@@ -1,12 +1,12 @@
 ## How to use this repo
 
-This repo provides code that was used during the demo of the talk at All Things Open 2023. It is provided to share the code so you can review, use, and do whatever you would like. I hope it will help make it easier to understand.
+This repo provides code that was used during the demo of the talk at the NFQ Data Deluge event. It is provided to share the code so you can review, use, and do whatever you would like. I hope it will help make it easier to understand.
 
 **Overview**
 
 The demo showcases how you can use the KubernetesPodOperator to run tasks that are orchestrated by Apache Airflow, on a Kubernetes cluster. In this demo, I have setup a MySQL database which we want to export data into an Amazon S3 bucket (which we have created). We want to do this in Java, so the demo will take some Java code that does this, and we will then containerise this so we can then run this in our Kubernetes environment. As we do not want to do this ourselves, we will then create a workflow in Apache Airflow, that we will use to run/orchestrate the running of that Java code.
 
-![pic of demo architecture](images/airflow-k8s-demo-overview.png)
+![pic of demo architecture](images/architecture.png)
 
 In order to get this demo working, you will need to do a few things:
 
