@@ -1,0 +1,7 @@
+--constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.8.1/constraints-3.11.txt"
+
+
+apache-airflow-providers-mysql==5.5.1
+kubernetes==23.6.0
+apache-airflow-providers-cncf-kubernetes==7.13.0
+

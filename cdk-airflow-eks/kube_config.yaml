@@ -1,0 +1,29 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: 
+    server: https://E39F691D569990B14F5597F5B7130CF5.gr7.ap-southeast-1.eks.amazonaws.com
+  name: arn:aws:eks:ap-southeast-1:704533066374:cluster/AirflowEKS9392A036-66b9676869254fdf8e1161c5fd53e472
+contexts:
+- context:
+    cluster: arn:aws:eks:ap-southeast-1:704533066374:cluster/AirflowEKS9392A036-66b9676869254fdf8e1161c5fd53e472
+    user: arn:aws:eks:ap-southeast-1:704533066374:cluster/AirflowEKS9392A036-66b9676869254fdf8e1161c5fd53e472
+  name: aws
+current-context: aws
+kind: Config
+preferences: {}
+users:
+- name: arn:aws:eks:ap-southeast-1:704533066374:cluster/AirflowEKS9392A036-66b9676869254fdf8e1161c5fd53e472
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - --region
+      - ap-southeast-1
+      - eks
+      - get-token
+      - --cluster-name
+      - AirflowEKS9392A036-66b9676869254fdf8e1161c5fd53e472
+      - --role
+      - arn:aws:iam::704533066374:role/nfq-airflow-k8s-iam-role
+      command: aws
