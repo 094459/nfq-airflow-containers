@@ -84,10 +84,6 @@ To run, **first edit the setup.sh file** in the java-containers directory (you w
 
 The script will produce similar output, but in addition creates an ECR Repository in which to upload the container image.
 
-
-```
-
-
 **Database credentials**
 
 We need to make sure that our container workloads can access the resources they need. Kubernetes does allow you to manage secrets, but as we have created the code in Java, we will store our secret an a secrets store. I will be using AWS Secrets Manager in the code, which means we now have to define that secret. 
